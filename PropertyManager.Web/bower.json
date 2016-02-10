@@ -1,0 +1,19 @@
+{
+  "name": "PropertyManager.Web",
+  "homepage": "https://github.com/emaraan/18-PropertyManager",
+  "description": "",
+  "main": "index.html",
+  "moduleType": [],
+  "authors": [
+    "Elizabeth Maraan <emaraan@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

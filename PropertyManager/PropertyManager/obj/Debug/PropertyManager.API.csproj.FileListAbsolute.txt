@@ -37,3 +37,6 @@ C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\AutoMapper.
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\DelegateDecompiler.dll
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\DelegateDecompiler.EntityFramework.dll
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\Mono.Reflection.dll
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.Cors.dll
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.Http.Cors.dll
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.Http.Cors.xml

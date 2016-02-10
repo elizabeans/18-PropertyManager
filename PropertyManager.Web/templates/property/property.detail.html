@@ -1,0 +1,30 @@
+<form name="propertyDetailForm">
+    <div class="form-group">
+        <label>Property Name</label>
+        <input type="text" class="form-control" ng-model="property.PropertyName" />
+    </div>
+    <div class="form-group">
+        <label>Address1</label>
+        <input type="text" class="form-control" ng-model="property.Address.Address1" />
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" ng-model="property.Address.City" />
+    </div>
+    <div class="form-group">
+        <label>Region</label>
+        <input type="text" class="form-control" ng-model="property.Address.Region" />
+    </div>
+    <div class="form-group">
+        <label>PostCode</label>
+        <input type="text" class="form-control" ng-model="property.Address.PostCode" />
+    </div>
+</form>
+
+<div class="well clearfix">
+    <button class="btn btn-success pull-right" ng-click="saveProperty()">Save</button>
+</div>
+
+<pre>
+{{property | json}}
+</pre>
