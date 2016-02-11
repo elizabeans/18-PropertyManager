@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Geocoding service</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+        html, body {
+            height: 50%;
+            margin: 500px;
+            padding: 500px;
+        }
+
+        #map {
+            height: 50%;
+        }
+
+        #floating-panel {
+            position: absolute;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="floating-panel">
+        <input id="address" type="text" value="{{property.Address.City}} {{Property.Address.Region}}">
+        <input id="submit" type="button" value="Geocode">
+    </div>
+    <div id="map"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh9Z1CI9kQIEzA75GYT-CVQwv2-5go24U&signed_in=true&callback=initMap"
+            async defer></script>
+</body>
+</html>

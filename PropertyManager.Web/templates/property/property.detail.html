@@ -1,30 +1,97 @@
-<form name="propertyDetailForm">
-    <div class="form-group">
-        <label>Property Name</label>
-        <input type="text" class="form-control" ng-model="property.PropertyName" />
-    </div>
-    <div class="form-group">
-        <label>Address1</label>
-        <input type="text" class="form-control" ng-model="property.Address.Address1" />
-    </div>
-    <div class="form-group">
-        <label>City</label>
-        <input type="text" class="form-control" ng-model="property.Address.City" />
-    </div>
-    <div class="form-group">
-        <label>Region</label>
-        <input type="text" class="form-control" ng-model="property.Address.Region" />
-    </div>
-    <div class="form-group">
-        <label>PostCode</label>
-        <input type="text" class="form-control" ng-model="property.Address.PostCode" />
-    </div>
-</form>
+<html>
+    <head>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
 
-<div class="well clearfix">
-    <button class="btn btn-success pull-right" ng-click="saveProperty()">Save</button>
-</div>
+            #map {
+                height: 400px;
+                width: 1150px;
+                border: 1px solid #333;
+                margin-top: 0.6em;
+            }
 
-<pre>
-{{property | json}}
-</pre>
+            #floating-panel {
+                position: absolute;
+                margin-top: 5em;
+                top: 10px;
+                left: 25%;
+                z-index: 5;
+                background-color: #fff;
+                padding: 5px;
+                border: 1px solid #999;
+                text-align: center;
+                font-family: 'Roboto','sans-serif';
+                line-height: 30px;
+                padding-left: 10px;
+            }
+
+            #address {
+                width:950px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="floating-panel">
+            <input id="address" type="text" value="{{property.Address.Address1}} {{property.Address.City}} {{property.Address.Region}} {{property.Address.PostCode}}">
+        </div>
+        <div id="map"></div>
+
+        <form name="propertyDetailForm">
+            <div class="form-group">
+                <label>Property Name</label>
+                <input type="text" class="form-control" ng-model="property.PropertyName" />
+            </div>
+            <div class="form-group">
+                <label>Number of Bedrooms</label>
+                <input type="text" class="form-control" ng-model="property.NumberOfBedrooms" />
+            </div>
+            <div class="form-group">
+                <label>Number of Bathrooms</label>
+                <input type="text" class="form-control" ng-model="property.NumberOfBathrooms" />
+            </div>
+            <div class="form-group">
+                <label>Number of Vehicles</label>
+                <input type="text" class="form-control" ng-model="property.NumberOfVehicles" />
+            </div>
+        </form>
+
+        <div class="well clearfix">
+            <button class="btn btn-success pull-right" ng-click="saveProperty()">Save</button>
+        </div>
+
+        <script>
+            function initMap() {
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 15,
+                    center: { lat: -34.397, lng: 150.644 }
+                });
+
+                var geocoder = new google.maps.Geocoder();
+
+                    geocodeAddress(geocoder, map);
+
+            }
+
+            function geocodeAddress(geocoder, resultsMap) {
+                var address = document.getElementById('address').value;
+                geocoder.geocode({ 'address': address }, function (results, status) {
+                    if (status === google.maps.GeocoderStatus.OK) {
+                        resultsMap.setCenter(results[0].geometry.location);
+                        var marker = new google.maps.Marker({
+                            map: resultsMap,
+                            position: results[0].geometry.location
+                        });
+                    } else {
+                        alert('Geocode was not successful for the following reason: ' + status);
+                    }
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh9Z1CI9kQIEzA75GYT-CVQwv2-5go24U&signed_in=true&callback=initMap"
+                async defer></script>
+    </body>
+</html>
