@@ -1,7 +1,7 @@
-﻿using PropertyManager.Models;
+﻿using PropertyManager.Api.Models;
 using System;
 
-namespace PropertyManager.Domain
+namespace PropertyManager.Api.Domain
 {
     public enum Priorities
     {

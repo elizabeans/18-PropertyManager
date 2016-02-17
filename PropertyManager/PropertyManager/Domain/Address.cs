@@ -1,10 +1,10 @@
-﻿using PropertyManager.Models;
+﻿using PropertyManager.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace PropertyManager.Domain
+namespace PropertyManager.Api.Domain
 {
     public class Address
     {
