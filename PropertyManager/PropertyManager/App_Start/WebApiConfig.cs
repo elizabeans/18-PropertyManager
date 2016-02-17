@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using PropertyManager.Domain;
-using PropertyManager.Models;
+using PropertyManager.Api.Domain;
+using PropertyManager.Api.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

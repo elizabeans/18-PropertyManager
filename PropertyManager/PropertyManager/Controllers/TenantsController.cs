@@ -9,12 +9,13 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using PropertyManager.Api.Infrastructure;
-using PropertyManager.Domain;
-using PropertyManager.Models;
+using PropertyManager.Api.Domain;
+using PropertyManager.Api.Models;
 using AutoMapper;
 
-namespace PropertyManager.Controllers
+namespace PropertyManager.Api.Controllers
 {
+    [Authorize]
     public class TenantsController : ApiController
     {
         private PropertyManagerDataContext db = new PropertyManagerDataContext();

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using PropertyManager.Models;
+using PropertyManager.Api.Models;
 
-namespace PropertyManager.Domain
+namespace PropertyManager.Api.Domain
 {
     public enum RentFrequencies //enums are always described plurally
     {

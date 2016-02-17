@@ -9,12 +9,13 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using PropertyManager.Api.Infrastructure;
-using PropertyManager.Domain;
-using PropertyManager.Models;
+using PropertyManager.Api.Domain;
+using PropertyManager.Api.Models;
 using AutoMapper;
 
-namespace PropertyManager.Controllers
+namespace PropertyManager.Api.Controllers
 {
+    [Authorize]
     public class PropertiesController : ApiController
     {
         private PropertyManagerDataContext db = new PropertyManagerDataContext();
@@ -22,14 +23,18 @@ namespace PropertyManager.Controllers
         // GET: api/Properties
         public IEnumerable<PropertyModel> GetProperties()
         {
-            return Mapper.Map<IEnumerable<PropertyModel>>(db.Properties);
+            return Mapper.Map<IEnumerable<PropertyModel>>(
+                db.Properties.Where(p => p.User.UserName == User.Identity.Name)
+                );
         }
 
         // GET: api/Properties/5
         [ResponseType(typeof(PropertyModel))]
         public IHttpActionResult GetProperty(int id)
         {
-            Property property = db.Properties.Find(id);
+            //Property property = db.Properties.Find(id);
+
+            Property property = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id);
             if (property == null)
             {
                 return NotFound();
@@ -71,7 +76,14 @@ namespace PropertyManager.Controllers
             }
 
             // find address in database by ID and assign it to dbAddress variable
-            var dbProperty = db.Properties.Find(id);
+            // var dbProperty = db.Properties.Find(id);
+
+            Property dbProperty = db.Properties.FirstOrDefault(p => p.User.UserName == User.Identity.Name && p.PropertyId == id);
+
+            if(dbProperty == null)
+            {
+                return BadRequest();
+            }
 
             // updates dbProperty with information passed in by property
             dbProperty.Update(property);
@@ -107,6 +119,8 @@ namespace PropertyManager.Controllers
                 return BadRequest(ModelState);
             }
             var dbProperty = new Property(property);
+
+            dbProperty.User = (PropertyManagerUser) db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
             db.Properties.Add(dbProperty);
             db.SaveChanges();

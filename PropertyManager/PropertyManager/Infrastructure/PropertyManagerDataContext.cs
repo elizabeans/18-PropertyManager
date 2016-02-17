@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
-using PropertyManager.Domain;
+using Microsoft.AspNet.Identity.EntityFramework;
+using PropertyManager.Api.Domain;
 
 namespace PropertyManager.Api.Infrastructure
 {
-    public class PropertyManagerDataContext : DbContext
+    public class PropertyManagerDataContext : IdentityDbContext<IdentityUser>
     {
         public PropertyManagerDataContext() : base("PropertyManager")
         {
@@ -55,6 +56,22 @@ namespace PropertyManager.Api.Infrastructure
                 .HasMany(t => t.WorkOrders)
                 .WithOptional(wo => wo.Tenant)
                 .HasForeignKey(wo => wo.TenantId);
+
+            modelBuilder.Entity<PropertyManagerUser>()
+                        .HasMany(u => u.Properties)
+                        .WithRequired(p => p.User)
+                        .HasForeignKey(p => p.UserId);
+
+            modelBuilder.Entity<PropertyManagerUser>()
+                        .HasMany(u => u.Tenants)
+                        .WithRequired(t => t.User)
+                        .HasForeignKey(t => t.UserId)
+                        .WillCascadeOnDelete(false);
+
+            // will setup all the relationships for ASP Net Identity
+            base.OnModelCreating(modelBuilder);
         }
+
+        public System.Data.Entity.DbSet<PropertyManager.Api.Domain.PropertyManagerUser> IdentityUsers { get; set; }
     }
 }
