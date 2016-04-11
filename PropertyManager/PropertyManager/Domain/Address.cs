@@ -18,6 +18,8 @@ namespace PropertyManager.Api.Domain
         }
 
         public int AddressId { get; set; }
+        public string UserId { get; set; }
+
         public string Address1 { get; set; }
         public string Address2 { get; set; }
         public string Address3 { get; set; }
@@ -28,6 +30,7 @@ namespace PropertyManager.Api.Domain
         public string PostCode { get; set; }
         public bool International { get; set; }
 
+        public virtual PropertyManagerUser User { get; set; }
         // modeling
         public virtual ICollection<Property> Properties { get; set; }
         public virtual ICollection<Tenant> Tenants { get; set; }

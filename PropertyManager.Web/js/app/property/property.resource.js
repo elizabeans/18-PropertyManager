@@ -6,7 +6,6 @@ angular.module('app').factory('PropertyResource', function(apiUrl, $resource) {
             },
 
             'create': {
-
                 method: 'POST'
             }
         });

@@ -10,8 +10,8 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using PropertyManager.Api.Infrastructure;
 using PropertyManager.Api.Domain;
-using AutoMapper;
 using PropertyManager.Api.Models;
+using AutoMapper;
 
 namespace PropertyManager.Api.Controllers
 {
@@ -23,14 +23,14 @@ namespace PropertyManager.Api.Controllers
         // GET: api/Addresses
         public IEnumerable<AddressModel> GetAddresses()
         {
-            return Mapper.Map<IEnumerable<AddressModel>>(db.Addresses);
+            return Mapper.Map<IEnumerable<AddressModel>>(db.Addresses.Where(a => a.User.UserName == User.Identity.Name));
         }
 
         // GET: api/Addresses/5
         [ResponseType(typeof(AddressModel))]
         public IHttpActionResult GetAddress(int id)
         {
-            Address address = db.Addresses.Find(id);
+            Address address = db.Addresses.FirstOrDefault(a => a.User.UserName == User.Identity.Name && a.AddressId == id);
             if (address == null)
             {
                 return NotFound();
@@ -54,8 +54,12 @@ namespace PropertyManager.Api.Controllers
             }
 
             // find address in database by ID and assign it to dbAddress variable
-            var dbAddress = db.Addresses.Find(id);
+            Address dbAddress = db.Addresses.FirstOrDefault(a => a.User.UserName == User.Identity.Name && a.AddressId == id);
 
+            if(dbAddress == null)
+            {
+                return BadRequest();
+            }
             // updates dbAddress with information passed in by address
             dbAddress.Update(address);
 
@@ -91,6 +95,8 @@ namespace PropertyManager.Api.Controllers
             }
 
             var dbAddress = new Address(address);
+
+            dbAddress.User = (PropertyManagerUser)db.Users.FirstOrDefault(u => u.UserName == User.Identity.Name);
 
             db.Addresses.Add(dbAddress);
             db.SaveChanges();
