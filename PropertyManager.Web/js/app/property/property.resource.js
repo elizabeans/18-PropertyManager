@@ -1,12 +1,18 @@
-angular.module('app').factory('PropertyResource', function(apiUrl, $resource) {
-    return $resource(apiUrl + '/properties/:propertyId', { propertyId: '@PropertyId' },
-        {
-            'update': {
-                method: 'PUT'
-            },
+angular.module('app')
+    .factory('PropertyResource', [
+        '$resource',
+        'apiUrl',
+        function ($resource, apiUrl) {
 
-            'create': {
-                method: 'POST'
-            }
-        });
-});
+            var resource = $resource(
+                apiUrl + '/properties', {}, {
+                    createProperty: {
+                        method: 'POST'
+                    },
+
+                    update: {
+                        method: 'PUT'
+                    }
+                });
+        }]
+);
