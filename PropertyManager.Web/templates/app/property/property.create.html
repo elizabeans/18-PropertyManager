@@ -1,0 +1,42 @@
+﻿<form name="propertyDetailForm">
+    <div class="form-group">
+        <label>Property Name</label>
+        <input type="text" class="form-control" ng-model="property.PropertyName" />
+    </div>
+    <div class="form-group">
+        <label>Address Line 1</label>
+        <input type="text" class="form-control" ng-model="property.Address.Address1" />
+    </div>
+    <div class="form-group">
+        <label>City</label>
+        <input type="text" class="form-control" ng-model="property.Address.City" />
+    </div>
+    <div class="form-group">
+        <label>Region</label>
+        <input type="text" class="form-control" ng-model="property.Address.Region" />
+    </div>
+    <div class="form-group">
+        <label>Post Code</label>
+        <input type="text" class="form-control" ng-model="property.Address.PostCode" />
+    </div>
+    <div class="form-group">
+        <label>International?</label>
+        <input type="checkbox" class="form-control" ng-model="property.Address.International" />
+    </div>
+    <div class="form-group">
+        <label>Number of Bedrooms</label>
+        <input type="text" class="form-control" ng-model="property.NumberOfBedrooms" />
+    </div>
+    <div class="form-group">
+        <label>Number of Bathrooms</label>
+        <input type="text" class="form-control" ng-model="property.NumberOfBathrooms" />
+    </div>
+    <div class="form-group">
+        <label>Number of Vehicles</label>
+        <input type="text" class="form-control" ng-model="property.NumberOfVehicles" />
+    </div>
+</form>
+
+<div class="well clearfix">
+    <button class="btn btn-success pull-right" ng-click="saveProperty()">Save</button>
+</div>
