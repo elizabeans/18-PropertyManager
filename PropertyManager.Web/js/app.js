@@ -17,7 +17,7 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $http
             .state('app.property', {url: '/property', abstract: true, template: '<ui-view/>'})
                 .state('app.property.grid', { url: '/grid', templateUrl: '/templates/app/property/property.grid.html', controller: 'PropertyGridController'})
                 .state('app.property.detail', { url: '/detail/:id', templateUrl: '/templates/app/property/property.detail.html', controller: 'PropertyDetailController' })
-                .state('app.property.add', { url: '/add', templateUrl: '/templates/app/property/property.detail.html', controller: 'PropertyAddController'})
+                .state('app.property.create', { url: '/create', templateUrl: '/templates/app/property/property.create.html', controller: 'PropertyGridController'})
             .state('app.lease', { url: '/lease', abstract: true, template: '<ui-view/>'})
                 .state('app.lease.grid', { url: '/grid', templateUrl: '/templates/app/lease/lease.grid.html', controller: 'LeaseGridController'})
                 .state('app.lease.detail', { url: '/detail/:id', templateUrl: '/templates/app/lease/lease.detail.html', controller: 'LeaseDetailController'})
