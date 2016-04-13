@@ -10,6 +10,11 @@ angular.module('app')
                         method: 'POST'
                     },
 
+                    getProperties: {
+                        method: 'GET',
+                        isArray: true
+                    },
+
                     update: {
                         method: 'PUT'
                     }
@@ -18,6 +23,10 @@ angular.module('app')
             return {
                 createProperty: function(propertyId) {
                     return resource.createProperty({ id: propertyId });
+                },
+
+                getProperties: function() {
+                    return resource.getProperties();
                 },
 
                 update: function(updatedPropertyData) {
