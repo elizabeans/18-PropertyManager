@@ -136,8 +136,11 @@ namespace PropertyManager.Api.Controllers
                 Address5 = dbProperty.Address.Address5,
                 City = dbProperty.Address.City,
                 Region = dbProperty.Address.Region,
-                PostCode = dbProperty.Address.PostCode
+                PostCode = dbProperty.Address.PostCode,
+                UserId = dbProperty.UserId
             };
+
+            property.AddressId = address.AddressId; 
 
             db.Addresses.Add(address);
             db.SaveChanges();

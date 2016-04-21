@@ -61,3 +61,4 @@ C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\Pro
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csproj.GenerateResource.Cache
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.dll
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.pdb
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Migrations.updateToAddress.resources
