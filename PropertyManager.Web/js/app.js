@@ -1,6 +1,7 @@
 angular.module('app', ['ngResource', 'ui.router', 'LocalStorageModule']);
 
-angular.module('app').value('apiUrl', 'https://empropertiesapi.azurewebsites.net/api');
+angular.module('app').value('apiUrl', 'http://localhost:57973/api');
+
 
 angular.module('app').config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
