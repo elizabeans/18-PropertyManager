@@ -162,12 +162,10 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountsController.cs" />
-    <Compile Include="Controllers\AddressesController.cs" />
     <Compile Include="Controllers\LeasesController.cs" />
     <Compile Include="Controllers\PropertiesController.cs" />
     <Compile Include="Controllers\TenantsController.cs" />
     <Compile Include="Controllers\WorkOrdersController.cs" />
-    <Compile Include="Domain\Address.cs" />
     <Compile Include="Domain\Lease.cs" />
     <Compile Include="Domain\Property.cs" />
     <Compile Include="Domain\PropertyManagerUser.cs" />
@@ -176,12 +174,11 @@
     <Compile Include="Infrastructure\AuthorizationRepository.cs" />
     <Compile Include="Infrastructure\PropertyManagerAuthorizationServerProvider.cs" />
     <Compile Include="Infrastructure\PropertyManagerDataContext.cs" />
-    <Compile Include="Migrations\201602152313351_InitialCreate.cs" />
-    <Compile Include="Migrations\201602152313351_InitialCreate.Designer.cs">
-      <DependentUpon>201602152313351_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201604261956281_initial.cs" />
+    <Compile Include="Migrations\201604261956281_initial.Designer.cs">
+      <DependentUpon>201604261956281_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AddressModel.cs" />
     <Compile Include="Models\LeaseModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
     <Compile Include="Models\RegistrationModel.cs" />
@@ -204,8 +201,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602152313351_InitialCreate.resx">
-      <DependentUpon>201602152313351_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201604261956281_initial.resx">
+      <DependentUpon>201604261956281_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -57,7 +57,7 @@ C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Net.
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.Http.xml
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.Http.WebHost.xml
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csprojResolveAssemblyReference.cache
-C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Migrations.InitialCreate.resources
-C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csproj.GenerateResource.Cache
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.dll
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.pdb
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Migrations.initial.resources
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csproj.GenerateResource.Cache

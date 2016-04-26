@@ -14,7 +14,5 @@ namespace PropertyManager.Api.Models
         public int? NumberOfBedrooms { get; set; }
         public float? NumberOfBathrooms { get; set; }
         public int? NumberOfVehicles { get; set; }
-
-        public AddressModel Address { get; set; }
     }
 }

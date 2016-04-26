@@ -127,20 +127,6 @@ namespace PropertyManager.Api.Controllers
 
             property.PropertyId = dbProperty.PropertyId;
 
-            var address = new Address
-            {
-                Address1 = dbProperty.Address.Address1,
-                Address2 = dbProperty.Address.Address2,
-                Address3 = dbProperty.Address.Address3,
-                Address4 = dbProperty.Address.Address4,
-                Address5 = dbProperty.Address.Address5,
-                City = dbProperty.Address.City,
-                Region = dbProperty.Address.Region,
-                PostCode = dbProperty.Address.PostCode
-            };
-
-            db.Addresses.Add(address);
-            db.SaveChanges();
 
             return CreatedAtRoute("DefaultApi", new { id = dbProperty.PropertyId }, Mapper.Map<PropertyModel>(property));
         }

@@ -33,7 +33,6 @@ namespace PropertyManager.Api
 
         private static void CreateMaps()
         {
-            Mapper.CreateMap<Address, AddressModel>();
             Mapper.CreateMap<Lease, LeaseModel>();
             Mapper.CreateMap<Property, PropertyModel>();
             Mapper.CreateMap<Tenant, TenantModel>();
