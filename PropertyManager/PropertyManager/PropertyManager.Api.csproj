@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201604261956281_initial.Designer.cs">
       <DependentUpon>201604261956281_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201604210607137_updateToAddress.cs" />
+    <Compile Include="Migrations\201604210607137_updateToAddress.Designer.cs">
+      <DependentUpon>201604210607137_updateToAddress.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\LeaseModel.cs" />
     <Compile Include="Models\PropertyModel.cs" />
@@ -203,6 +207,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604261956281_initial.resx">
       <DependentUpon>201604261956281_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201604210607137_updateToAddress.resx">
+      <DependentUpon>201604210607137_updateToAddress.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

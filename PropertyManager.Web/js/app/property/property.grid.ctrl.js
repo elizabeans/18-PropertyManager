@@ -1,8 +1,13 @@
-angular.module('app').controller('PropertyGridController', function($scope, PropertyResource){
+angular.module('app').controller('PropertyGridController', function($scope, PropertyResource) {
+
+    $scope.properties = [];
 
     function activate() {
-        $scope.properties = PropertyResource.query();
-    }
+        PropertyResource.getProperties().$promise
+            .then(function(properties) {
+                $scope.properties = properties;
+            });
+    };
 
     activate();
 

@@ -59,5 +59,9 @@ C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\bin\System.Web.
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csprojResolveAssemblyReference.cache
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.dll
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.pdb
+<<<<<<< HEAD
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Migrations.initial.resources
 C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Api.csproj.GenerateResource.Cache
+=======
+C:\dev\origin\18-PropertyManager\PropertyManager\PropertyManager\obj\Release\PropertyManager.Migrations.updateToAddress.resources
+>>>>>>> a15cdc92c8d902c2ddb3290a08243d54b6e61f1f

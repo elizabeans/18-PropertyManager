@@ -127,7 +127,6 @@ namespace PropertyManager.Api.Controllers
 
             property.PropertyId = dbProperty.PropertyId;
 
-
             return CreatedAtRoute("DefaultApi", new { id = dbProperty.PropertyId }, Mapper.Map<PropertyModel>(property));
         }
 
