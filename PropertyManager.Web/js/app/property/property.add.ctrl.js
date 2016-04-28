@@ -1,4 +1,4 @@
-﻿angular.module('app').controller('PropertyAddController', function ($scope, AddressResource, PropertyResource, apiUrl) {
+﻿angular.module('app').controller('PropertyAddController', function ($scope, PropertyResource, apiUrl) {
 
     $scope.newProperty = {};
 
