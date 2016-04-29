@@ -1,7 +1,5 @@
 ﻿angular.module('app').controller('PropertyAddController', function ($scope, PropertyResource, apiUrl) {
 
-    $scope.newProperty = {};
-
     $scope.createProperty = function(newPropertyData) {
         PropertyResource.createProperty(newPropertyData).$promise
             .then(function(data) {

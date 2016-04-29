@@ -21,8 +21,8 @@ angular.module('app')
                 });
 
             return {
-                createProperty: function(propertyId) {
-                    return resource.createProperty({ id: propertyId });
+                createProperty: function(newPropertyData) {
+                    return resource.createProperty(newPropertyData);
                 },
 
                 getProperties: function() {
